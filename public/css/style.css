@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #434343;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Mulish', sans-serif;
+}
+
+/* NAVIGATION BAR SECTION */
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px 10px 65px;
+    position: fixed;
+    background-color: #434343;
+}
+
+nav::after {
+    content: "";
+    display: block;
+    width: 94%;
+    height: 1px;
+    background-color: #FFFFFF; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    margin: 0 3% 0 3%;
+  }
+
+nav h1{
+    width: 290px;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-align: left;
+    padding: 12px 0 0 10px;
+    line-height: 0;
+}
+
+nav img{
+    height: 62px;
+}
+
+#topHead{
+    font: bold 22px 'Mulish', sans-serif;
+}
+
+#lowHead{
+    font: 16px 'Mulish', sans-serif;
+}
+
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    margin: 25px 30px 0 0;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 30px;
+}
+
+nav ul li a{
+    position: relative;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color: #D9D9D9;
+}
+
+/* ENTRY SECTION */
+.entry{
+    width: 100%;
+    height: 100%;
+    padding: 120px 3% 0 3%;
+}
+
+.entry h1{
+    font: bold 24px 'Mulish', sans-serif;
+    color: #FFFFFF;
+}
+
+.entry p{
+    font: 20px 'Mulish', sans-serif;
+    color: #FFFFFF;
+}
+
+
+/* MARKDOWN SYNTAX SECTION */
+.MDSyntax{
+    width: 100%;
+    height: 100%;
+    padding: 100px 3% 0 3%;
+}
+
+.MDSyntax h1{
+    font: bold 24px 'Mulish', sans-serif;
+    color: #FFFFFF;
+}
+
+/* DEVELOPERS SECTION */
+.developers{
+    width: 100%;
+    height: 100%;
+    padding: 100px 3% 0 3%;
+}
+
+.developers h1{
+    font: bold 24px 'Mulish', sans-serif;
+    color: #FFFFFF;
+}

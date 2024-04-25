@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML</title>
+    <link rel="icon" type="image/x-icon" href="files/logo.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <img src="files/logo.png" alt="logo">
+        <h1>
+            <span id="topHead">Markdown to HTML</span>
+            <span id="lowHead">Converter</span>
+        </h1>
+        <ul class="tabs">
+            <li><a href="#MDSyntax" onclick="scrollToSection('MDSyntax')">Markdown Syntax</a></li>
+            <li><a href="#developers" onclick="scrollToSection('developers')">Developers</a></li>
+        </ul>
+    </nav>
+
+    <!-- ENTRY SECTION -->
+    <div class="entry" id="entry">
+        <h1>Convert Markdown to HTML</h1>
+        <p>Are you tired of manually formatting your content in HTML? Look no further! Our Markdown to HTML converter simplifies the process of converting Markdown syntax into beautiful, well-structured HTML markup.</p>
+        
+        <!-- Input field for Markdown -->
+        <textarea id="markdownInput" rows="10" cols="50" placeholder="Enter your Markdown here..."></textarea>
+
+        <!-- Convert button -->
+        <button onclick="convertMarkdownToHTML()">Convert</button>
+        
+        <!-- Placeholder for HTML output -->
+        <div id="htmlOutput"></div>
+
+
+    </div>
+
+    <!-- MARKDOWN SYNTAX SECTION -->
+    <div class="MDSyntax" id="MDSyntax">
+        <h1>Markdown Syntax</h1>
+    </div>
+
+    <!-- DEVELOPERS SECTION -->
+    <div class="developers" id="developers">
+        <h1>Developers</h1>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
