@@ -22,28 +22,63 @@
             <li><a href="#MDSyntax" onclick="scrollToSection('MDSyntax')">Markdown Syntax</a></li>
             <li><a href="#developers" onclick="scrollToSection('developers')">Developers</a></li>
         </ul>
-    </nav>
+    </nav> 
 
-    <!-- ENTRY SECTION -->
-    <div class="entry" id="entry">
-        <h1>Convert Markdown to HTML</h1>
-        <p>Are you tired of manually formatting your content in HTML? Look no further! Our Markdown to HTML converter simplifies the process of converting Markdown syntax into beautiful, well-structured HTML markup.</p>
+        <!-- ENTRY SECTION --> 
+        <div class="entry" id="entry">
+            <h1>Convert Markdown to HTML</h1>
+            <p>Are you tired of manually formatting your content in HTML? Look no further! Our Markdown to HTML converter simplifies the process of converting Markdown syntax into beautiful, well-structured HTML markup.</p>
+            
+            <!-- First Container -->
+            <div id="Container">
+                <div id="Toolbar">
+                    <!-- Add your toolbar buttons here --> 
+                    <div id="enterMarkdownText">Enter Markdown</div>
+                    <button id="clearButton">Clear</button> 
+                </div>
+            
+                <!-- Input field for Markdown -->
+                <div class="textarea-container">
+                    <div class="line-numbers" id="lineNumbers"></div>
+                    <textarea id="markdownInput" rows="10" cols="50" placeholder="Enter your Markdown here..."></textarea> 
+                </div>            
+            </div>  
+
+         
+        </div> 
+
+        <!-- Second Container -->
+        <div class="entry" id="entry2">  
+            <div id="Container2">
+                <div id="Toolbar2">
+                    <!-- Add your toolbar buttons here --> 
+                    <div id="HTMLoutputText">HTML Output</div>
+                    <button id="clearButton2">Clear</button> 
+                </div>
+            
+                <!-- Input field for HTML Output -->
+                <div class="textarea-container">
+                    <div class="line-numbers" id="lineNumbers2"></div>
+                    <textarea id="HTMLOutput" rows="10" cols="50" placeholder="HTML Output"></textarea> 
+                </div>            
+            </div> 
+
+           
+        </div>  
+
+        <div class="button-container">
+            <!-- Convert button-->
+            <button id="convertButton" onclick="convertMarkdownToHTML()">Convert</button> 
+            <button id="downloadButton" onclick="downloadMarkdownToHTML()">Download</button>
+        </div> 
         
-        <!-- Input field for Markdown -->
-        <textarea id="markdownInput" rows="10" cols="50" placeholder="Enter your Markdown here..."></textarea>
-
-        <!-- Convert button -->
-        <button onclick="convertMarkdownToHTML()">Convert</button>
         
-        <!-- Placeholder for HTML output -->
-        <div id="htmlOutput"></div>
-
-
-    </div>
 
     <!-- MARKDOWN SYNTAX SECTION -->
     <div class="MDSyntax" id="MDSyntax">
-        <h1>Markdown Syntax</h1>
+        <h1>Markdown Syntax</h1> 
+        <p>Markdown is a lightweight markup language that is easy to read and write. It allows users to format plain text using simple, intuitive syntax. Here are some Markdown syntax elements:</p> 
+        <img src="files/white_bg.jpg" alt="middle triangle">
     </div>
 
     <!-- DEVELOPERS SECTION -->
