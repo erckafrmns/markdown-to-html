@@ -353,7 +353,8 @@ nav ul li a.active{
     cursor: pointer;   
     height: 50px;  
     width: 170px;  
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
+    z-index: -1;
 } 
 
 #convertButton:hover, #downloadButton:hover{ 
