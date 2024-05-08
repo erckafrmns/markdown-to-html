@@ -72,4 +72,21 @@ document.getElementById('markdownInput').addEventListener('input', updateLineNum
 document.getElementById('HTMLOutput').addEventListener('input', updateLineNumbers2);
 
 updateLineNumbers(); 
-updateLineNumbers2(); 
+updateLineNumbers2();  
+
+window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var scrollToTopButton = document.getElementById("scrollToTopButton");
+            if (document.body.scrollTop > 2100 || document.documentElement.scrollTop > 2100) {
+                scrollToTopButton.classList.add("show");
+            } else {
+                scrollToTopButton.classList.remove("show");
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;  
+        }
+

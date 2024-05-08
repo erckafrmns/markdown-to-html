@@ -38,7 +38,7 @@
                 </div>
             
                 <!-- Input field for Markdown -->
-                <div class="textarea-container">
+                <div class="textarea-container1">
                     <div class="line-numbers" id="lineNumbers"></div>
                     <textarea id="markdownInput" rows="10" cols="50" placeholder="Enter your Markdown here..."></textarea> 
                 </div>            
@@ -57,7 +57,7 @@
                 </div>
             
                 <!-- Input field for HTML Output -->
-                <div class="textarea-container">
+                <div class="textarea-container2">
                     <div class="line-numbers" id="lineNumbers2"></div>
                     <textarea id="HTMLOutput" rows="10" cols="50" placeholder="HTML Output"></textarea> 
                 </div>            
@@ -78,13 +78,232 @@
     <div class="MDSyntax" id="MDSyntax">
         <h1>Markdown Syntax</h1> 
         <p>Markdown is a lightweight markup language that is easy to read and write. It allows users to format plain text using simple, intuitive syntax. Here are some Markdown syntax elements:</p> 
-        <img src="files/white_bg.jpg" alt="middle triangle">
+        <img src="files/white_bg.jpg" alt="middle triangle"> 
+
+        <div class="row">
+            <div class="column">
+              <table>
+                <tr>
+                  <th colspan="2" style="text-align:center;">Basic Formatting</th>
+                </tr>
+                <tr>
+                    <td style="background-color:#D9D9D9;"><strong>Bold: </strong></td>
+                    <td>**Bold**</td>
+                </tr>
+                <tr>
+                    <td style="background-color:#D9D9D9;"><em>Emphasized: </em></td>
+                    <td>*Emphasized*</td>
+                </tr>
+                <tr>
+                    <td style="background-color:#D9D9D9;"><del>Strikethrough: </del> </td>
+                    <td>~~Strikethrough~~</td>
+                </tr> 
+                <tr>
+                    <td style="background-color:#D9D9D9;border-bottom-left-radius: 5px;">Horizontal rules: <hr> </td>
+                    <td style="border-bottom-right-radius: 5px; ">--- (three hyphens); *** (three asterisks); ___ (three underscores)</td>
+                </tr>
+              </table>
+            </div> 
+            
+            <div class="column">
+              <table>
+                <tr>
+                    <th colspan="2" style="text-align:center;">Headings</th>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center; background-color: #D9D9D9;">All heading levels, are marked by # at the beginning of a line</td>
+                </tr>
+                <tr>
+                    <td>Heading 1: </td>
+
+                    <td># Heading 1</td>
+                </tr>
+                <tr>
+                    <td>Heading 2: </td>
+                    <td>## Heading 2</td>
+                </tr> 
+                <tr>
+                    <td style="border-bottom-left-radius: 5px;">Heading 3: </td>
+                    <td style="border-bottom-right-radius: 5px;">### Heading 3</td>
+                </tr>
+              </table>
+            </div> 
+            <table>
+                <tr>
+                  <th colspan="2" style="text-align:center;">Links</th>
+                </tr>
+                <tr>
+                    <td style="background-color:#D9D9D9;">Links: </td>
+                    <td>[inline](https://markdowntohtml.com)</td>
+                </tr>
+                <tr>
+                    <td style="background-color:#D9D9D9;">Inline links: </td>
+                    <td>[have a title](https://markdowntohtml.com "Awesome Markdown Converter")</td>
+                </tr>
+                <tr>
+                    <td style="background-color:#D9D9D9; border-bottom-left-radius: 5px;">Refrence links: </td>
+                    <td style="border-bottom-right-radius: 5px;">[reference link][markdowntohtml]; [use numbers][1]; [link text itself]; &lt;link text itself&gt;</td>
+                </tr> 
+              </table> 
+              <div class="column">
+                <table>
+                  <tr>
+                    <th colspan="2" style="text-align:center;">Images</th>
+                  </tr>
+                  <tr>
+                      <td style="background-color:#D9D9D9;">Images with the full URL: </td>
+                      <td>![alt text](https://placebear.com/300/300)</td>
+                  </tr>
+                  <tr>
+                      <td style="background-color:#D9D9D9; border-bottom-left-radius: 5px;">reference-style image: </td>
+                      <td style="border-bottom-right-radius: 5px;">![alt text][bears]</td>
+                  </tr>
+                </table>
+              </div> 
+              
+              <div class="column">
+                <table>
+                  <tr>
+                      <th style="text-align:center;">Blockquotes</th>
+                  </tr>
+                  <tr>
+                      <td style="text-align:center; background-color: #D9D9D9; ">Use > to offset text as a blockquote.</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;"> >This is some part of a blockquote.</td>
+                  </tr>
+                </table>
+              </div> 
+              <table>
+                <tr>
+                  <th colspan="2" style="text-align:center;">Lists (Ordered Lists and Unordered Lists)</th>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center; background-color: #D9D9D9;">Lists are made by using indentation and a beginning-of-line marker to indicate a list item.</td>
+                </tr>
+                <tr>
+                    <td><pre> 
+                    * One item
+                    * Another item
+                        * A sub-item
+                        * A deeper item
+                        * Back in sub-item land
+                    * And back at the main level 
+                </pre></td> 
+                <style>
+                    ul {
+                        padding-left: 20px;
+                    }
+                    li {
+                        margin-bottom: 5px;
+                    }
+                </style>
+                
+                <td> 
+                    <ul>
+                        <li>One item</li>
+                        <li>Another item
+                            <ul>
+                                <li>A sub-item
+                                    <ul>
+                                        <li>A deeper item</li>
+                                    </ul>
+                                </li>
+                                <li>Back in sub-item land</li>
+                            </ul>
+                        </li>
+                        <li>And back at the main level</li>
+                    </ul>
+                </td>
+                
+                </tr> 
+                <tr>
+                    <td colspan="2" style="text-align:center; background-color: #D9D9D9;">Unordered lists can use an asterisk (*), plus (+), or minus (-) to indicate each list item. Ordered lists use a number at the beginning of the line. <br> The numbers do not need to be incremented - this will happen for you automatically by the HTML. That makes it easier to re-order your ordered lists (in markdown) as needed.</td>
+                </tr>  
+                <tr>
+                    <td style="border-bottom-left-radius: 5px;"> 
+                    <pre> 
+                    * One item
+                    * Another item
+                        1. A nested ordered list
+                        2. This is the second item
+                            * And now an unordered list as its child
+                            * Another item in this list
+                        3. One more in the ordered list
+                    * And back at the main level 
+                </pre></td> 
+                <style>
+                    ul, ol {
+                        padding-left: 20px;
+                    }
+                    li {
+                        margin-bottom: 5px; 
+                        margin-left: 40px; /* Add left margin to all list items */
+
+                    }
+                </style>
+                
+                <td style="border-bottom-right-radius: 5px;"> 
+                    <ul>
+                        <li>One item</li>
+                        <li>Another item
+                            <ol>
+                                <li>A nested ordered list</li>
+                                <li>This is the second item
+                                    <ul>
+                                        <li>And now an unordered list as its child</li>
+                                        <li>Another item in this list</li>
+                                    </ul>
+                                </li>
+                                <li>One more in the ordered list</li>
+                            </ol>
+                        </li>
+                        <li>And back at the main level</li>
+                    </ul>
+                </td>
+                
+                </tr>
+              </table>
+        </div>
     </div>
 
     <!-- DEVELOPERS SECTION -->
     <div class="developers" id="developers">
         <h1>Developers</h1>
-    </div>
+        <div class="image-row">
+            <div class="image-container">
+                <img src="files/ericka.jpg" alt="Developer 1">
+                <p>Ericka Joy Formanes</p> 
+                <img src="files/facebook logo.png" alt="facebook logo 1" class="logo"> 
+                <img src="files/linkedin logo.png" alt="linkedin logo 1" class="logo">
+            </div>
+            <div class="image-container">
+                <img src="files/grace.jpg" alt="Developer 2">
+                <p>Grace Anne Garchitorena</p> 
+                <img src="files/facebook logo.png" alt="facebook logo 2" class="logo"> 
+                <img src="files/linkedin logo.png" alt="linkedin logo 2" class="logo">
+            </div>
+            <div class="image-container">
+                <img src="files/mark.jpg" alt="Developer 3">
+                <p>Mark Toni Ramsol Tagalogon</p> 
+                <img src="files/facebook logo.png" alt="facebook logo 3" class="logo"> 
+                <img src="files/linkedin logo.png" alt="linkedin logo 3" class="logo">
+            </div>
+            <div class="image-container">
+                <img src="files/maria.jpg" alt="Developer 4">
+                <p>Maria Lourdes Villaruz</p> 
+                <img src="files/facebook logo.png" alt="facebook logo 4" class="logo"> 
+                <img src="files/linkedin logo.png" alt="linkedin logo 4" class="logo">
+            </div>
+        </div>
+         
+    </div>    
+     
+    <button id="scrollToTopButton" onclick="scrollToTop()">
+        <img src="files/back-to-top button.png" alt="Scroll to Top">
+    </button> 
+
+    <p class="copyright">&copy; 2024 FGTV | All Rights Reserved</p> 
 
     <script src="js/main.js"></script>
 </body>
