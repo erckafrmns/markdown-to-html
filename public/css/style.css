@@ -4,19 +4,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+}  
 
 body{
     background-color: #434343;
     width: 100%;
-    min-height: 100vh;
-    font-family: 'Mulish', sans-serif;
+    min-height: 100%;
+    font-family: 'Mulish', sans-serif; 
+    flex-direction: column; 
+    display: flex;
 }
 
 /* NAVIGATION BAR SECTION */
 nav{
-    width: 100%; 
-    height: 15%;
+    width: 100%;  
+    height: 107px;
     display: flex;
     justify-content: space-between;
     padding: 15px 30px 10px 65px;
@@ -28,13 +30,13 @@ nav{
 nav::after {
     content: "";
     display: block;
-    width: 100%;
     height: 1px; 
     background-image: linear-gradient(to right, #FFFFFF, #000000);
     position: absolute;
     top: 91%; 
-    left: 46px;
-    margin: 10px 3% 0 3%;
+    left: 3%;
+    margin: 10px 3% 0 3%; 
+    width: calc(100% - 6px);
   } 
 
 nav h1{
@@ -47,9 +49,16 @@ nav h1{
 }
 
 nav img{ 
-    margin-left: -15px;
+    margin-left: -1%;
     height: 90px;
 }
+
+@media screen and (max-width: 1000px) {
+    nav::after {
+        margin-left: 3%; /* Adjusted margin for larger screens */
+    }
+}
+
 
 #topHead{     
     font: bold 25px 'Mulish', sans-serif;
@@ -108,13 +117,16 @@ nav ul li a.active{
     color: #FFFFFF;  
 }
 
-.entry p, .MDSyntax p{  
+.entry p, .MDSyntax p {
     margin-top: 10px; 
     margin-left: 200px;
+    margin-right: 200px;
     font: 17px 'Mulish', sans-serif; 
     color: #FFFFFF; 
-    max-width: 1000px;  
-} 
+    text-align: center;
+    word-wrap: break-word; 
+}
+
 
 /* MARKDOWN INPUT CONTAINER */
 #Container { 
@@ -127,14 +139,15 @@ nav ul li a.active{
 #Toolbar {
     background-color: #000000;
     padding: 13px;  
-    width: 500px; 
+    /*width: 500px; */ 
+    width: 37.5%;
     border-bottom: 1px solid #ccc; 
     display:flex; 
     justify-content: space-between;    
     font-size: 18px;  
     border-top-left-radius: 5px; 
     border-top-right-radius: 5px;  
-}
+} 
 
 #Toolbar div {
     color: #ffffff; 
@@ -168,7 +181,8 @@ nav ul li a.active{
     overflow-x: auto;   
     white-space: nowrap;
     border-bottom-right-radius: 5px;  
-    width: 465px; 
+    /*width: 465px;*/  
+    width: 35%;
 
     scrollbar-color: #000000 #D9D9D9;
     scrollbar-width:auto; 
@@ -188,9 +202,14 @@ nav ul li a.active{
     color: #999;  
 } 
 
-.textarea-container {
+.textarea-container1 {
     display: flex;  
-}
+} 
+
+.textarea-container2{ 
+    display: flex;  
+} 
+
 
 .line-numbers { 
     height: 400px;
@@ -205,60 +224,27 @@ nav ul li a.active{
     background-color: #D9D9D9; 
 }
 
-/* MARKDOWN SYNTAX SECTION */
-.MDSyntax{
-    width: 100%;
-    height: 100%;
-    padding: 130px 3% 0 3%;  
-    text-align: center; 
-    position: relative;
-} 
-
-.MDSyntax img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 99vw; 
-    z-index: -1;  
-    margin-top: 95px;
-}
-
-/* DEVELOPERS SECTION */
-.developers{
-    width: 100%;
-    height: 100%;
-    padding: 100px 3% 0 3%; 
-}
-
-.developers h1{
-    font: bold 33px 'Mulish', sans-serif;
-    color: #000000; 
-    margin-top: 1000px;  
-    text-align: center;
-
-}   
-
-
 /* HTML OUTPUT CONTAINER */
 #entry2 {
     width: 100%;
     height: 100%;
     padding: 20px 3% 0 3%; 
-    text-align: center;    
+    text-align: center;     
 }
 
 #Container2 { 
     margin-top: 20px;
     display: flex;
     flex-direction: column; 
-    margin-left: 860px; 
+    /*margin-left: 890px;*/ 
+    margin-left: 61.6%; 
 }
 
 #Toolbar2 {
     background-color: #000000;
     padding: 13px;  
-    width: 500px; 
+    /*width: 500px; */ 
+    width: 96.3%;
     border-bottom: 1px solid #ccc; 
     display:flex; 
     justify-content: space-between;    
@@ -266,7 +252,7 @@ nav ul li a.active{
     border-top-left-radius: 5px; 
     border-top-right-radius: 5px;    
     margin-top: -490px; 
-}
+} 
 
 #Toolbar2 div {
     color: #ffffff; 
@@ -300,11 +286,12 @@ nav ul li a.active{
     overflow-x: auto;   
     white-space: nowrap;
     border-bottom-right-radius: 5px;  
-    width: 465px; 
+    /*width: 465px; */ 
+    width: 90%;
 
     scrollbar-color: #000000 #D9D9D9;
     scrollbar-width:auto; 
-    outline: none;
+    outline: none; 
 } 
 
 #HTMLOutput::-webkit-scrollbar-thumb {
@@ -318,19 +305,6 @@ nav ul li a.active{
 
 #HTMLOutput::placeholder {
     color: #999;  
-} 
-
-.line-numbers2 { 
-    height: 400px;
-    width: 35px;
-    padding-top: 15px;
-    font-family: 'Mulish', sans-serif; 
-    border: 1px solid #000000;
-    overflow-y: hidden;
-    resize: none;
-    user-select: none; 
-    border-bottom-left-radius: 5px;  
-    background-color: #D9D9D9; 
 } 
 
 /* CONVERT AND DOWNLOAD BUTTONS */
@@ -354,11 +328,295 @@ nav ul li a.active{
     height: 50px;  
     width: 170px;  
     margin-bottom: 15px; 
-    z-index: -1;
 } 
 
 #convertButton:hover, #downloadButton:hover{ 
     color: #D9D9D9;
     border: 2px solid #D9D9D9;
+}   
+
+/* MARKDOWN SYNTAX SECTION */
+.MDSyntax{
+    width: 100%;
+    height: 100%;
+    padding: 130px 3% 0 3%;  
+    text-align: center; 
+    position: relative;  
+} 
+
+.MDSyntax img {
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;   
+} 
+
+.row {
+    margin-left:-5px;
+    margin-right:-5px; 
+  }
+    
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px; 
+  }
+  
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }    
+  
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin-top: 10px; 
+    margin-bottom: 10px;  
+    border-radius: 5px;  
+}
+
+th, td {
+    text-align: left;
+    padding: 16px; 
+    outline: 1px solid #000000;
+} 
+
+th { 
+    background-color: #000000; 
+    color: #ffffff;  
+    font-size: 18px;    
+    border-top-right-radius: 5px;  
+    border-top-left-radius: 5px; 
+}
+
+   
+tr {
+    background-color: #ffffff;
+} 
+
+td pre {
+    font: 18px 'Mulish', sans-serif; 
+    white-space: pre-wrap;
+}
+
+  
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  } 
+
+
+/* DEVELOPERS SECTION */
+.developers{
+    width: 100%;
+    height: 100%;
+    padding: 100px 3% 0 3%;  
+    position: relative; /* Ensure relative positioning for the developers section */
+    margin-bottom: 100px;  
+}
+
+.developers h1{
+    font: bold 33px 'Mulish', sans-serif;
+    color: #000000; 
+    margin-top: 10px;   
+    text-align: center; 
+    margin-bottom: 100px;
+}    
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+.image-container {
+    text-align: center;
+    margin: 0 25px;
+    flex: 0 0 auto;
+}
+
+.image-container img {
+    width: 240px; 
+    height: 290px; 
+    border-radius: 5px;
+    background-color: #000000;
+    padding: 10px 10px 70px 10px; /* top right bottom left */
+} 
+
+.image-container p { 
+    color: #ffffff; 
+    font-size: 15px; 
+    margin-top: -60px;
+} 
+
+.image-container img.logo {
+    width: 40px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 10px; 
+    margin-right: -5px;  
+    margin-left: -5px;
+    margin-top: -5px;
+} 
+
+.copyright {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 14px; 
+    background-color: #000000; 
+    padding: 30px;  
+    margin-bottom: 0%;
+} 
+
+#scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#scrollToTopButton img {
+    width: 50px;
+    height: 50px;  
+    margin-top: 100px;
+    margin-bottom: 60px;
+}
+
+#scrollToTopButton.show {
+    opacity: 1;
+}
+
+
+/*RESPONSIVENESS*/  
+@media screen and (max-width: 768px) {
+    #Toolbar {
+        width: 40%; 
+    } 
+    #Toolbar2 {
+        width: 100%; 
+    } 
+}  
+
+@media screen and (max-width: 1400px) {
+    #Toolbar {
+        width: 37.7%;
+    } 
+    #Toolbar2 {
+        width: 97%;
+    }  
+    #markdownInput{ 
+        height: 65vh;
+    } 
+    .line-numbers{ 
+        height: 65vh;
+    }
+    #Container2{ 
+        margin-top: -20vh; 
+    }  
+    #HTMLOutput{ 
+        height: 65vh;
+    } 
+    #convertButton{ 
+        margin-top: -70px;
+    } 
+    #downloadButton{ 
+        margin-bottom: 70px;
+    } 
 } 
  
+@media screen and (min-width: 1700px) {
+    #Toolbar {
+        width: 37.2%;
+    } 
+    #Toolbar2 {
+        width: 95.7%;
+    } 
+    #markdownInput{ 
+        height: 61.7vh;
+    } 
+    .line-numbers{ 
+        height: 61.7vh;
+    }
+    #Container2{ 
+        margin-top: -7.3vh; 
+    }  
+    #HTMLOutput{ 
+        height: 61.7vh;
+    } 
+    #convertButton{ 
+        margin-top: -25px;
+    } 
+    #downloadButton{ 
+        margin-bottom: 25px;
+    } 
+    nav::after{ 
+        left: 2.3%;
+    } 
+} 
+@media screen and (min-width: 1780px) {
+    #Toolbar {
+        width: 37.2%;
+    } 
+    #Toolbar2 {
+        width: 95.4%;
+    } 
+    #markdownInput{ 
+        height: 72vh;
+    } 
+    .line-numbers{ 
+        height: 72vh;
+    }
+    #Container2{ 
+        margin-top: -37.5vh; 
+    }  
+    #HTMLOutput{ 
+        height: 72vh;
+    } 
+    #convertButton{ 
+        margin-top: -200px;
+    } 
+    #downloadButton{ 
+        margin-bottom: 200px;
+    } 
+    nav::after{ 
+        left: 1.6%;
+    } 
+}
+
+@media screen and (min-width: 1900px) {
+    #Toolbar {
+        width: 36.9%;
+    } 
+    #Toolbar2 {
+        width: 95%;
+    } 
+    #markdownInput{ 
+        height: 67.5vh;
+    } 
+    .line-numbers{ 
+        height: 67.5vh;
+    }
+    #Container2{ 
+        margin-top: -21.3vh; 
+    }  
+    #HTMLOutput{ 
+        height: 67.5vh;
+    } 
+    #convertButton{ 
+        margin-top: -100px;
+    } 
+    #downloadButton{ 
+        margin-bottom: 100px;
+    }
+} 
