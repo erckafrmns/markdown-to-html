@@ -9,7 +9,7 @@ function scrollToSection(sectionId) {
 // Function to convert Markdown to HTML (placeholder function)
 function convertMarkdownToHTML() {
     var markdownInput = document.getElementById('markdownInput').value;
-    console.log(markdownInput); 
+    console.log(markdownInput);
 }
 
 // Get the clear button element
@@ -17,7 +17,7 @@ const clearButton = document.getElementById("clearButton");
 
 clearButton.addEventListener("click", function() {
     const markdownInput = document.getElementById("markdownInput");
-    
+
     markdownInput.value = "";
 
     markdownInput.dispatchEvent(new Event('input'));
@@ -27,14 +27,14 @@ const clearButton2 = document.getElementById("clearButton2");
 
 clearButton2.addEventListener("click", function() {
     const HTMLOutput = document.getElementById("HTMLOutput");
-    
+
     HTMLOutput.value = "";
 
     HTMLOutput.dispatchEvent(new Event('input'));
 });
 
 
-// Update line numbers on scroll 
+// Update line numbers on scroll
 const markdownInput = document.getElementById("markdownInput");
 const lineNumbers = document.getElementById("lineNumbers");
 
@@ -71,21 +71,101 @@ function updateLineNumbers2() {
 document.getElementById('markdownInput').addEventListener('input', updateLineNumbers);
 document.getElementById('HTMLOutput').addEventListener('input', updateLineNumbers2);
 
-updateLineNumbers(); 
-updateLineNumbers2();  
+updateLineNumbers();
+updateLineNumbers2();
 
-window.onscroll = function() {scrollFunction()};
+// Copy to clipboard function
+const textarea = document.getElementById('HTMLOutput');
+const button = document.querySelector('.copy-html');
 
-        function scrollFunction() {
-            var scrollToTopButton = document.getElementById("scrollToTopButton");
-            if (document.body.scrollTop > 2100 || document.documentElement.scrollTop > 2100) {
-                scrollToTopButton.classList.add("show");
+function toggleButtonVisibility() {
+    if (textarea.scrollTop === 0) {
+        button.classList.remove('hidden');
+    } else {
+        button.classList.add('hidden');
+    }
+}
+toggleButtonVisibility();
+textarea.addEventListener('scroll', toggleButtonVisibility);
+
+function copyToClipboard() {
+    var text = textarea.value;
+    navigator.clipboard.writeText(text)
+        .then(function() {
+            console.log('Text copied to clipboard successfully.');
+        })
+        .catch(function(err) {
+            console.error('Could not copy text: ', err);
+        });
+}
+
+
+const markdownTextarea = document.getElementById('markdownInput');
+const markdownButton = document.querySelector('.copy-markdown');
+
+markdownTextarea.addEventListener('scroll', toggleMarkdownButtonVisibility);
+
+function toggleMarkdownButtonVisibility() {
+    if (markdownTextarea.scrollTop === 0) {
+        markdownButton.classList.remove('hidden');
+    } else {
+        markdownButton.classList.add('hidden');
+    }
+}
+
+markdownButton.addEventListener('click', copyMarkdownToClipboard);
+
+function copyMarkdownToClipboard() {
+    var text = markdownTextarea.value;
+    navigator.clipboard.writeText(text)
+        .then(function() {
+            console.log('Markdown text copied to clipboard successfully.');
+        })
+        .catch(function(err) {
+            console.error('Could not copy Markdown text: ', err);
+        });
+}
+
+// Back to top button
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+    var scrollToTopButton = document.getElementById("scrollToTopButton");
+    if (document.body.scrollTop > 2100 || document.documentElement.scrollTop > 2100) {
+        scrollToTopButton.classList.add("show");
+    } else {
+        scrollToTopButton.classList.remove("show");
+    }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+// Zoom on scroll
+document.addEventListener("DOMContentLoaded", function() {
+    const tables = document.querySelectorAll('.zoomable-table');
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function handleScroll() {
+        tables.forEach(table => {
+            if (isInViewport(table)) {
+                table.classList.add('zoomed');
             } else {
-                scrollToTopButton.classList.remove("show");
+                table.classList.remove('zoomed');
             }
-        }
+        });
+    }
 
-        function scrollToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;  
-        }
+    window.addEventListener('scroll', handleScroll);
+});
