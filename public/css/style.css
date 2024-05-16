@@ -35,7 +35,7 @@ nav{
     padding: 15px 30px 10px 65px;
     position: fixed;
     background: linear-gradient(to bottom,black, #434343);
-    z-index: 1; 
+    z-index: 3; 
 }
 
 @keyframes moveGradient {
@@ -505,7 +505,8 @@ button {
 .copy-html{ 
     position: absolute;  
     top: 87.1%;  
-    right: 7.5%;
+    right: 7.5%; 
+    z-index: 2;
 }
 
 /* CONVERT AND DOWNLOAD BUTTONS */
@@ -573,8 +574,69 @@ button {
 #convertButton:hover .text,
 #downloadButton:hover .text {
     transform: translateX(12px);
-}
+} 
 
+.input-div {
+    position: relative;
+    height: 50px;
+    width: 170px; 
+    padding: 12px 40px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.5) , inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 5px #000000;
+    transition: color 0.6s ease, box-shadow 0.6s ease, border-radius 0.6s ease;
+  }
+
+  .input-div:hover {
+    box-shadow: 0 0 0 12px transparent;
+    border-radius: 5px;  
+  }
+  
+  .icon {
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    animation: iconflicker 6s linear infinite;
+  }
+  
+  .input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer !important;
+  }
+  
+  @keyframes iconflicker {
+    0% {
+      opacity: 1;
+    }
+  
+    5% {
+      opacity: 0.2;
+    }
+  
+    10% {
+      opacity: 1;
+    }
+  
+    25% {
+      opacity: 0.2;
+    }
+  
+    30% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+    
 
 /* MARKDOWN SYNTAX SECTION */
 .MDSyntax{
@@ -1087,7 +1149,6 @@ td pre {
     nav::after{ 
         left: 1.6%;
     }   
-    
 }
 
 @media screen and (min-width: 1900px) {
@@ -1124,5 +1185,8 @@ td pre {
     .copy-html{  
         top: 91%;
         right: 7.9%;
-    }
+    } 
+    .input-div {  
+        margin-top: -88px;
+    } 
 } 

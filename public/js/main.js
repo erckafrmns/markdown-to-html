@@ -169,3 +169,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', handleScroll);
 });
+ 
+//Upload file 
+document.addEventListener("DOMContentLoaded", function() {
+    const inputDiv = document.querySelector(".input-div");
+
+    inputDiv.addEventListener("click", function() {
+        const inputFile = document.querySelector(".input");
+        inputFile.click();
+    });
+
+    // Function to handle the file selection
+    const inputFile = document.querySelector(".input");
+    inputFile.addEventListener("change", function(event) {
+        const selectedFile = event.target.files[0];
+        console.log("Selected file:", selectedFile);
+        // You can add further processing for the selected file here
+    });
+});
