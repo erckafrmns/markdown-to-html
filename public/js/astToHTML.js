@@ -139,4 +139,4 @@ class AstToHtml {
     }
 }
 
-module.exports = AstToHtml;
+export default AstToHtml;

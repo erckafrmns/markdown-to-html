@@ -1,3 +1,55 @@
+document.getElementById('convertButton').addEventListener('click', convertMarkdownToHTML);
+document.getElementById('fileInput').addEventListener('change', uploadMarkdownFile);
+
+async function convertMarkdownToHTML() {
+    const markdownInput = document.getElementById('markdownInput').value;
+
+    try {
+        const response = await fetch('/convert', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ markdown: markdownInput }),
+        });
+
+        if (response.ok) {
+            const htmlOutput = await response.text();
+            document.getElementById('HTMLOutput').value = htmlOutput;
+        } else {
+            console.error('Failed to convert Markdown to HTML:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+async function uploadMarkdownFile(event) {
+    const file = event.target.files[0];
+    if (!file) {
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+        const response = await fetch('/upload', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (response.ok) {
+            const htmlOutput = await response.text();
+            document.getElementById('HTMLOutput').value = htmlOutput;
+        } else {
+            console.error('Failed to upload and convert Markdown file:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 // Function to scroll to a section by its ID
 function scrollToSection(sectionId) {
     var section = document.getElementById(sectionId);
@@ -7,10 +59,10 @@ function scrollToSection(sectionId) {
 }
 
 // Function to convert Markdown to HTML (placeholder function)
-function convertMarkdownToHTML() {
-    var markdownInput = document.getElementById('markdownInput').value;
-    console.log(markdownInput);
-}
+// function convertMarkdownToHTML() {
+//     var markdownInput = document.getElementById('markdownInput').value;
+//     console.log(markdownInput);
+// }
 
 // Get the clear button element
 const clearButton = document.getElementById("clearButton");
