@@ -1,5 +1,6 @@
 document.getElementById('convertButton').addEventListener('click', convertMarkdownToHTML);
 document.getElementById('fileInput').addEventListener('change', uploadMarkdownFile);
+document.getElementById('downloadButton').addEventListener('click', downloadMarkdownToHTML);
 
 async function convertMarkdownToHTML() {
     const markdownInput = document.getElementById('markdownInput').value;
@@ -59,12 +60,6 @@ function scrollToSection(sectionId) {
         section.scrollIntoView({ behavior: 'smooth' });
     }
 }
-
-// Function to convert Markdown to HTML (placeholder function)
-// function convertMarkdownToHTML() {
-//     var markdownInput = document.getElementById('markdownInput').value;
-//     console.log(markdownInput);
-// }
 
 // Get the clear button element
 const clearButton = document.getElementById("clearButton");

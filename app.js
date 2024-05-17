@@ -7,6 +7,7 @@ import fs from "fs";
 import Tokenizer from "./public/js/tokenizer.js"; 
 import Parser from "./public/js/parser.js";
 import AstToHtml from "./public/js/astToHTML.js";
+import Generate from "./public/js/generate.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
