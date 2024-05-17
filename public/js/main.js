@@ -40,8 +40,9 @@ async function uploadMarkdownFile(event) {
         });
 
         if (response.ok) {
-            const htmlOutput = await response.text();
-            document.getElementById('HTMLOutput').value = htmlOutput;
+            const markdownContent = await file.text(); // Extract content of the file
+            document.getElementById('HTMLOutput').value = await response.text(); // Display HTML output
+            document.getElementById('markdownInput').value = markdownContent; // Set Markdown input value
         } else {
             console.error('Failed to upload and convert Markdown file:', response.statusText);
         }
@@ -49,6 +50,7 @@ async function uploadMarkdownFile(event) {
         console.error('Error:', error);
     }
 }
+
 
 // Function to scroll to a section by its ID
 function scrollToSection(sectionId) {
@@ -220,22 +222,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.addEventListener('scroll', handleScroll);
-});
- 
-//Upload file 
-document.addEventListener("DOMContentLoaded", function() {
-    const inputDiv = document.querySelector(".input-div");
-
-    inputDiv.addEventListener("click", function() {
-        const inputFile = document.querySelector(".input");
-        inputFile.click();
-    });
-
-    // Function to handle the file selection
-    const inputFile = document.querySelector(".input");
-    inputFile.addEventListener("change", function(event) {
-        const selectedFile = event.target.files[0];
-        console.log("Selected file:", selectedFile);
-        // You can add further processing for the selected file here
-    });
 });

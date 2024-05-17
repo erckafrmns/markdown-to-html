@@ -586,7 +586,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: hidden; 
     box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.5) , inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 5px #000000;
     transition: color 0.6s ease, box-shadow 0.6s ease, border-radius 0.6s ease;
   }
@@ -599,7 +599,8 @@ button {
   .icon {
     color: #ffffff;
     font-size: 1.5rem;
-    cursor: pointer;
+    cursor: pointer; 
+    z-index:-10;
     animation: iconflicker 6s linear infinite;
   }
   
