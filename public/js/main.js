@@ -15,6 +15,7 @@ async function convertMarkdownToHTML() {
         if (response.ok) {
             const htmlOutput = await response.text();
             document.getElementById('HTMLOutput').value = htmlOutput;
+            updateLineNumbers2();
         } else {
             console.error('Failed to convert Markdown to HTML:', response.statusText);
         }
@@ -42,6 +43,8 @@ async function uploadMarkdownFile(event) {
             const markdownContent = await file.text(); // Extract content of the file
             document.getElementById('HTMLOutput').value = await response.text(); // Display HTML output
             document.getElementById('markdownInput').value = markdownContent; // Set Markdown input value
+            updateLineNumbers();
+            updateLineNumbers2();
         } else {
             console.error('Failed to upload and convert Markdown file:', response.statusText);
         }
