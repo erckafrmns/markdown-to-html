@@ -1,6 +1,4 @@
-document.getElementById('convertButton').addEventListener('click', convertMarkdownToHTML);
 document.getElementById('fileInput').addEventListener('change', uploadMarkdownFile);
-document.getElementById('downloadButton').addEventListener('click', downloadMarkdownToHTML);
 
 async function convertMarkdownToHTML() {
     const markdownInput = document.getElementById('markdownInput').value;
@@ -52,6 +50,19 @@ async function uploadMarkdownFile(event) {
     }
 }
 
+function downloadMarkdownToHTML() {
+    const htmlContent = document.getElementById('HTMLOutput').value;
+    if (!htmlContent) {
+        console.error('No HTML content to download');
+        return;
+    }
+
+    // Generate a unique filename (you can customize this)
+    const filename = `markdowntohtml.html`;
+
+    // Generate the HTML file
+    GenerateHTML.generateFile(htmlContent, filename);
+}
 
 // Function to scroll to a section by its ID
 function scrollToSection(sectionId) {
