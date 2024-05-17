@@ -11,28 +11,28 @@ class AstToHtml {
             });
 
         } else if (node.type === 'header') {
-            html += `<h${node.level} id="${node.id}">${node.value}</h${node.level}>`;
+            html += `<h${node.level} id="${node.id}">${node.value}</h${node.level}>\n`;
 
         } else if (node.type === 'blockquote') {
-            html += '<blockquote>';
+            html += '<blockquote>\n';
             node.children.forEach(child => {
                 html += this.astToHTML(child);
             });
-            html += '</blockquote>';
+            html += '</blockquote>\n';
 
         } else if (node.type === 'ordered-list') {
-            html += '<ol>';
+            html += '<ol>\n';
             node.children.forEach(child => {
                 html += this.astToHTML(child);
             });
-            html += '</ol>';
+            html += '</ol>\n';
 
         } else if (node.type === 'unordered-list') {
-            html += '<ul>';
+            html += '<ul>\n';
             node.children.forEach(child => {
                 html += this.astToHTML(child);
             });
-            html += '</ul>';
+            html += '</ul>\n';
 
         } else if (node.type === 'list-item') {
             html += '<li>';
@@ -41,7 +41,7 @@ class AstToHtml {
                     html += this.astToHTML(child);
                 });
             }
-            html += '</li>';
+            html += '</li>\n';
 
         } else if (node.type === 'paragraph') {
             html += '<p>';
@@ -50,50 +50,50 @@ class AstToHtml {
                     html += this.astToHTML(child);
                 });
             }
-            html += '</p>';
+            html += '</p>\n';
             
         } else if (node.type === 'table') {
-            html += '<table>';
+            html += '<table>\n';
             if (node.head.length > 0) {
-                html += '<thead>';
-                html += '<tr>';
+                html += '<thead>\n';
+                html += '<tr>\n';
                 node.head.forEach(cell => {
-                    html += `<th>${this.astToHTML(cell.content[0])}</th>`;
+                    html += `<th>${this.astToHTML(cell.content[0])}</th>\n`;
                 });
-                html += '</tr>';
-                html += '</thead>';
+                html += '</tr>\n';
+                html += '</thead>\n';
             }
             if (node.rows.length > 0) {
-                html += '<tbody>';
+                html += '<tbody>\n';
                 node.rows.forEach(row => {
-                    html += '<tr>';
+                    html += '<tr>\n';
                     row.cells.forEach(cell => {
-                        html += `<td>${this.astToHTML(cell.content[0])}</td>`;
+                        html += `<td>${this.astToHTML(cell.content[0])}</td>\n`;
                     });
-                    html += '</tr>';
+                    html += '</tr>\n';
                 });
-                html += '</tbody>';
+                html += '</tbody>\n';
             }
-            html += '</table>';
+            html += '</table>\n';
         
         } else if (node.type === 'codeblock') {
-            html += `<pre><code>${node.value}</code></pre>`;
+            html += `<pre><code>\n${node.value}</code></pre>\n`;
         
         } else if (node.type === 'tasklist') {
-            html += '<ul>';
+            html += '<ul>\n';
             node.children.forEach(child => {
                 html += '<li>';
                 html += `<input type="checkbox" ${child.state} disabled>`;
                 html += child.content;
-                html += '</li>';
+                html += '</li>\n';
             });
-            html += '</ul>';
+            html += '</ul>\n';
 
         } else if (node.type === 'horizontal-rule') {
-            html += '<hr>';
+            html += '<hr>\n';
         
         } else if (node.type === 'linebreak') {
-            html += '<br>';
+            html += '<br>\n';
 
         } else if (node.type === 'boldItalic') {
             html += `<strong><em>${node.value}</em></strong>`;
