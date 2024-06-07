@@ -21,8 +21,7 @@ This is some basic sample markdown
 
 ## Paragraph
 
-Statement with **bold**, *italics*, and ***bold italics***. 
-Even ~~strikethrough~~ and ==highlight==.
+Statement with **bold**, *italics*, and ***bold italics***. Even ~~strikethrough~~ and ==highlight==.
 Superscript^example^ Subscript~example~ 
 
 [A link](http://localhost:5000/) to Markdown to HTML Converter.
@@ -40,7 +39,7 @@ Superscript^example^ Subscript~example~
 |Three | Mark |
 |Three | Lourdes |
 
-## Codeblock
+## Code Blocks
 
     codeblock one
     codeblock two
@@ -50,7 +49,7 @@ Superscript^example^ Subscript~example~
 fenced codeblock
 ```
 
-## Tasklists
+## Task Lists
 
 - [x] Write the press release
 - [ ] Update the website
