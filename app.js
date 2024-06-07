@@ -39,9 +39,13 @@ app.post('/convert', (req, res) => {
 
     try {
         const tokens = Tokenizer.tokenize(markdown);
+        console.log(tokens);
         const parser = new Parser(tokens);
+        console.log(parser);
         const ast = parser.parse();
+        console.log(ast);
         const htmlNodes = AstToHtml.astToHTML(ast);
+        console.log(htmlNodes);
         res.send(htmlNodes);
     } catch (error) {
         res.status(500).send('Error converting Markdown to HTML');
@@ -62,9 +66,13 @@ app.post('/upload', upload.single('file'), (req, res) => {
 
         try {
             const tokens = Tokenizer.tokenize(markdown);
+            console.log(tokens);
             const parser = new Parser(tokens);
+            console.log(parser);
             const ast = parser.parse();
+            console.log(ast);
             const htmlNodes = AstToHtml.astToHTML(ast);
+            console.log(htmlNodes);
             res.send(htmlNodes);
         } catch (error) {
             res.status(500).send('Error converting Markdown to HTML');
