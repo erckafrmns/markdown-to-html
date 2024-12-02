@@ -2,6 +2,8 @@
 
 A web-based application that converts Markdown to HTML. This tool allows users to input Markdown text or simply, upload Markdown files, and the content will be converted into HTML.
 
+![Sample GIF](public/files/sample.gif)
+
 ![Homepage](public/files/homepage.png)
 
 ![Sample Output](public/files/sampleoutput.png)
