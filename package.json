@@ -1,4 +1,5 @@
 {
+  "homepage": "https://erckafrmns.github.io/markdown-to-html",
   "name": "markdown-to-html",
   "version": "1.0.0",
   "description": "Markdown to HTML Converter using Context-free Grammar",
@@ -6,7 +7,10 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d build"
+
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +18,8 @@
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
